@@ -86,13 +86,26 @@ WSGI_APPLICATION = 'easyreport.wsgi.application'
 #     }
 # }
 
+# debug
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'easy_report',
+#         'USER': 'root',
+#         'PASSWORD': '123456',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#     }
+# }
+
+# staging
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'easy_report',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST': '127.0.0.1',
+        'USER': 'report_admin',
+        'PASSWORD': 'admin*123',
+        'HOST': 'rm-bp191218g0x7be6140o.mysql.rds.aliyuncs.com',
         'PORT': '3306',
     }
 }
@@ -146,3 +159,5 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.AutoSchema',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
